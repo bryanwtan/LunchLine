@@ -27,9 +27,6 @@ dependencies:
   - resource-pool
   - monad-logger
 
-library:
-  source-dirs: src
-
 default-extensions:
   - OverloadedStrings
   - DerivingStrategies

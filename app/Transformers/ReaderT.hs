@@ -1,4 +1,4 @@
-module Transformer where
+module Transformers.ReaderT where
 
 import Control.Monad.Reader
 import Data.Pool
@@ -16,3 +16,6 @@ runDB :: ReaderT SqlBackend IO a -> AppT a
 runDB body = do
   pool <- asks envPool
   liftIO $ runSqlPool body pool
+
+-- exercise: Try defining both SqlPersistT m a and DB a and try rewriting runDB in terms of them
+-- exercise: Compare these implementations to mwb and how Yesod sets up this similar behavior.
